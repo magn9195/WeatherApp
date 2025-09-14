@@ -1,0 +1,70 @@
+body {
+	background-color: dimgrey;
+	display: flex;
+	place-content: center center;
+	flex-wrap: wrap;
+	height: 100vh;
+}
+
+#WeatherBox {
+	height: 700px;
+	width: 700px;
+	background-color: black;
+	border-radius: 40px;
+}
+#WeatherLocation {
+	color: red;
+	font-size: 40px;
+	text-align: center;
+}
+
+#SearchForm {
+	text-align: center;
+	font-size: 25px;
+	padding-top: 50px;
+}
+
+#SearchForm #SearchBox {
+	font-size: 25px;
+	border-radius: 20px;
+	padding-left: 10px;
+}
+
+#Top input {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.WeatherForDay {
+	display: flex;
+	align-items: flex-start;
+	color: red;
+	background-color: white;
+	place-content: center center;
+	flex-wrap: wrap;
+	height: 100px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+}
+
+.WeatherTime {
+	border-color: red;
+	border-style: dotted;
+	margin-left: auto;
+	font-size: 25px;
+	flex: 1;
+	text-align: center;
+}
+
+.WeatherAttributes {
+	border-color: blue;
+	border-style: dotted;
+	margin-right: auto;
+	font-size: 20px;
+	line-height: 10px;
+	flex: 2;
+}
+
+

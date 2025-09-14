@@ -1,0 +1,56 @@
+﻿@using WeatherApp.Models
+@model Weather
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="WeatherBox">
+
+		<form id="SearchForm">
+			<input id="SearchBox" type="text" placeholder="Search..">
+		</form>
+		<h1 id="WeatherLocation">Weather in @Model.location.name</h1>
+
+		<div class="WeatherForDay">
+			<div class="WeatherTime">
+				<h2>Now</h2>
+			</div>
+
+			<div class="WeatherAttributes"> @* hourly[0] mean hour 0 (now) *@
+				<p>@Model.timelines.hourly[0].values.temperature°C</p>
+				<p>Windspeed: @Model.timelines.hourly[0].values.windSpeed m/s</p>
+				<p>Humidity: @Model.timelines.hourly[0].values.humidity%</p>
+			</div>
+		</div>
+
+		<div class="WeatherForDay">
+			<div class="WeatherTime">
+				<h2>3 Days</h2>
+			</div>
+
+			<div class="WeatherAttributes"> @* hourly[72] 3 days from now *@
+				<p>@Model.timelines.hourly[72].values.temperature°C</p>
+				<p>Windspeed: @Model.timelines.hourly[72].values.windSpeed m/s</p>
+				<p>Humidity: @Model.timelines.hourly[72].values.humidity%</p>
+			</div>
+		</div>
+
+		<div class="WeatherForDay">
+			<div class="WeatherTime">
+				<h2>5 Days</h2>
+			</div>
+
+			<div class="WeatherAttributes">@* hourly[0] mean 5 days from now, the api stops at hour 119 *@
+				<p>@Model.timelines.hourly[119].values.temperature°C</p>
+				<p>Windspeed: @Model.timelines.hourly[119].values.windSpeed m/s</p>
+				<p>Humidity: @Model.timelines.hourly[119].values.humidity%</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
