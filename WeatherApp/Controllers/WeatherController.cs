@@ -17,7 +17,8 @@ namespace WeatherApp.Controllers
             _weatherService = weatherService;
 		}
 
-        public async Task<ActionResult> Index(string city)
+		[HttpGet("{city}")]
+		public async Task<ActionResult> Index(string city)
         {
 			if (string.IsNullOrEmpty(city))
 				city = "Aalborg";

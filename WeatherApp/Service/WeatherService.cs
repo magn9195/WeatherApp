@@ -16,8 +16,7 @@ namespace WeatherApp.Service
 		public WeatherService(ILogger<WeatherService> logger, IOptions<ApiSettings> apiOptions)
 		{
 			_logger = logger;
-			_apiKey = apiOptions.Value.MyApiKey.Trim();
-			_logger.LogInformation("Apikey length: " + _apiKey.Length);
+			_apiKey = apiOptions.Value.MyApiKey;
 		}
 		
 		public async Task<Weather> GetWeather(string location)
