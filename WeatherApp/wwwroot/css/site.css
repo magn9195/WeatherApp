@@ -1,5 +1,5 @@
 body {
-	background-color: dimgrey;
+	background-color: grey;
 	display: flex;
 	place-content: center center;
 	flex-wrap: wrap;
@@ -13,7 +13,7 @@ body {
 	border-radius: 40px;
 }
 #WeatherLocation {
-	color: red;
+	color: black;
 	font-size: 40px;
 	text-align: center;
 }
@@ -38,7 +38,7 @@ body {
 .WeatherForDay {
 	display: flex;
 	align-items: flex-start;
-	color: red;
+	color: black;
 	background-color: white;
 	place-content: center center;
 	flex-wrap: wrap;
@@ -50,8 +50,6 @@ body {
 }
 
 .WeatherTime {
-	border-color: red;
-	border-style: dotted;
 	margin-left: auto;
 	font-size: 25px;
 	flex: 1;
@@ -59,8 +57,6 @@ body {
 }
 
 .WeatherAttributes {
-	border-color: blue;
-	border-style: dotted;
 	margin-right: auto;
 	font-size: 20px;
 	line-height: 10px;
