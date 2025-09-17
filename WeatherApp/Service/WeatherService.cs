@@ -42,6 +42,9 @@ namespace WeatherApp.Service
 			body = await response.Content.ReadAsStringAsync();
 			Weather? weatherForecast = JsonSerializer.Deserialize<Weather>(body);
 
+			/* Location is formatted like "Aalborg, Aalborg Kommune, Region Nordjylland, 9000, Danmark" Need to get the first portion of this*/
+			string[] weatherLocationSplit = weatherForecast.location.name.Split(",");
+			weatherForecast.location.name = weatherLocationSplit[0];
 			return weatherForecast;
 		}
 	}
