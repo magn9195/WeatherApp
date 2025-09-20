@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<title></title>
 	<link href="~/css/site.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div id="WeatherBox">
@@ -14,6 +15,7 @@
 		<form id="SearchForm">
 			<input id="SearchBox" type="text" placeholder="Search..">
 		</form>
+
 		<h1 id="WeatherLocation">Weather in @Model.location.name</h1>
 
 		<div class="WeatherForDay">
@@ -22,9 +24,9 @@
 			</div>
 
 			<div class="WeatherAttributes"> @* hourly[0] mean hour 0 (now) *@
-				<p>@Model.timelines.hourly[0].values.temperature°C</p>
-				<p>Windspeed: @Model.timelines.hourly[0].values.windSpeed m/s</p>
-				<p>Humidity: @Model.timelines.hourly[0].values.humidity%</p>
+				<p id="tempDay0">@Model.timelines.hourly[0].values.temperature°C</p>
+				<p id="windspeedDay0">Windspeed: @Model.timelines.hourly[0].values.windSpeed m/s</p>
+				<p id="humidityDay0">Humidity: @Model.timelines.hourly[0].values.humidity%</p>
 			</div>
 		</div>
 
@@ -34,9 +36,9 @@
 			</div>
 
 			<div class="WeatherAttributes"> @* hourly[72] 3 days from now *@
-				<p>@Model.timelines.hourly[72].values.temperature°C</p>
-				<p>Windspeed: @Model.timelines.hourly[72].values.windSpeed m/s</p>
-				<p>Humidity: @Model.timelines.hourly[72].values.humidity%</p>
+				<p id="tempDay3">@Model.timelines.hourly[72].values.temperature°C</p>
+				<p id="windspeedDay3">Windspeed: @Model.timelines.hourly[72].values.windSpeed m/s</p>
+				<p id="humidityDay3">Humidity: @Model.timelines.hourly[72].values.humidity%</p>
 			</div>
 		</div>
 
@@ -46,11 +48,13 @@
 			</div>
 
 			<div class="WeatherAttributes">@* hourly[0] mean 5 days from now, the api stops at hour 119 *@
-				<p>@Model.timelines.hourly[119].values.temperature°C</p>
-				<p>Windspeed: @Model.timelines.hourly[119].values.windSpeed m/s</p>
-				<p>Humidity: @Model.timelines.hourly[119].values.humidity%</p>
+				<p id="tempDay5">@Model.timelines.hourly[119].values.temperature°C</p>
+				<p id="windspeedDay5">Windspeed: @Model.timelines.hourly[119].values.windSpeed m/s</p>
+				<p id="humidityDay5">Humidity: @Model.timelines.hourly[119].values.humidity%</p>
 			</div>
 		</div>
 	</div>
+
+	<script src="~/js/site.js"></script>
 </body>
 </html>
