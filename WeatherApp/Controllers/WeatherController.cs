@@ -17,14 +17,11 @@ namespace WeatherApp.Controllers
             _weatherService = weatherService;
 		}
 
-		[HttpGet("{city}")]
-		public async Task<ActionResult> Index(string city)
+		[HttpGet]
+		public async Task<IActionResult> Index()
         {
-			if (string.IsNullOrEmpty(city))
-				city = "Aalborg";
-
-			Weather Weather = await _weatherService.GetWeather(city);
-			return View(Weather);
+			Weather weather = await _weatherService.GetWeather("aalborg");
+			return View(weather);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
