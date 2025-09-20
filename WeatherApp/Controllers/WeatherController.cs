@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
+using System.Text.Json;
 using WeatherApp.Models;
 using WeatherApp.Service;
 
@@ -29,5 +30,14 @@ namespace WeatherApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+		[HttpGet]
+		public async Task<IActionResult> MyJson(string city)
+		{
+			var json = await _weatherService.GetWeatherJson(city);
+			// Optional validation to fail fast if upstream returned garbage
+			using var _ = JsonDocument.Parse(json);
+			return Content(json, "application/json"); // jQuery dataType:"json" will parse it
+		}
+	}
 }
