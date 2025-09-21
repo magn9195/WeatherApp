@@ -2,21 +2,21 @@
 {
 	public class Weather
 	{
-		public Timelines timelines { get; set; }
-		public Location location { get; set; }
+		public Timelines? timelines { get; set; }
+		public Location? location { get; set; }
 	}
 
 	public class Timelines
 	{
-		public Minutely[] minutely { get; set; }
-		public Hourly[] hourly { get; set; }
-		public Daily[] daily { get; set; }
+		public Minutely[]? minutely { get; set; }
+		public Hourly[]? hourly { get; set; }
+		public Daily[]? daily { get; set; }
 	}
 
 	public class Minutely
 	{
-		public DateTime time { get; set; }
-		public WeatherValueMinutely values { get; set; }
+		public DateTime? time { get; set; }
+		public WeatherValueMinutely? values { get; set; }
 	}
 
 	public class WeatherValueMinutely
@@ -56,8 +56,8 @@
 
 	public class Hourly
 	{
-		public DateTime time { get; set; }
-		public WeatherValueHourly values { get; set; }
+		public DateTime? time { get; set; }
+		public WeatherValueHourly? values { get; set; }
 	}
 
 	public class WeatherValueHourly
@@ -97,8 +97,8 @@
 
 	public class Daily
 	{
-		public DateTime time { get; set; }
-		public WeatherValueDaily values { get; set; }
+		public DateTime? time { get; set; }
+		public WeatherValueDaily? values { get; set; }
 	}
 
 	public class WeatherValueDaily
@@ -209,9 +209,9 @@
 
 	public class Location
 	{
-		public double lat { get; set; }
-		public double lon { get; set; }
-		public string name { get; set; }
-		public string type { get; set; }
+		public double? lat { get; set; }
+		public double? lon { get; set; }
+		public string? name { get; set; }
+		public string? type { get; set; }
 	}
 }
