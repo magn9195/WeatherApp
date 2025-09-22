@@ -31,7 +31,7 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr) {
-                alert("Error: " + xhr.responseText);
+                alert("Please input a valid city");
             }
         });
     }
